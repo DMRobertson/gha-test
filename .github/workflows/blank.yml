@@ -34,8 +34,7 @@ jobs:
           echo empty string: ${{ '' }}
           echo \'potato\': ${{ 'potato' }}
 
-          # will fail, this requires an expression
-          # echo empty substitution: ${{  }}
+          echo can't subsitute and not provide an expression
           echo no array or object literals!
 
 
