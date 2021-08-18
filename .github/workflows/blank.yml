@@ -63,8 +63,10 @@ jobs:
           echo label: ${{ matrix.label }}
           echo api: ${{ matrix.api }}
           echo postgres: ${{ matrix.postgres }}
-
+          echo
           echo label: ${{ toJSON(matrix.label) }}
           echo api: ${{ toJSON(matrix.api) }}
           echo postgres: ${{ toJSON(matrix.postgres) }}
-
+          echo
+          echo 'postgres && 1': ${{ matrix.postgres && 1 }} ${{ toJSON(matrix.postgres && 1) }}
+          echo 'api && 1': ${{ matrix.api && 1 }} ${{ toJSON(matrix.api && 1) }}
