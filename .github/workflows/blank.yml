@@ -9,7 +9,7 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  echo substitutions:
     runs-on: ubuntu-latest
 
     steps:
@@ -38,8 +38,26 @@ jobs:
           echo "no array or object literals!"
           echo "can't subsitute and not provide an expression"
 
+  test reading from matrix:
+    strategy:
+      matrix:
+        include:
+          - label: SQLite
 
+          - label: SQLite, full HTTP APIs
+            api: full-http
 
+          - label: Postgres
+            postgres: postgres
 
+          - label: Postgres, full HTTP APIs
+            postgres: postgres
+            api: full-http
 
-
+    name: ${{ matrix.label }}
+    steps:
+      - name: Echooooooo
+      - run: |
+          echo label: ${{ matrix.label }}
+          echo api: ${{ matrix.api }}
+          echo postgres: ${{ matrix.postgres }}
