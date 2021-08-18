@@ -39,6 +39,7 @@ jobs:
           echo "can't subsitute and not provide an expression"
 
   test reading from matrix:
+    runs-on: ubuntu-latest
     strategy:
       matrix:
         include:
@@ -53,11 +54,11 @@ jobs:
           - label: Postgres, full HTTP APIs
             postgres: postgres
             api: full-http
-
     name: ${{ matrix.label }}
     steps:
       - name: Echooooooo
-      - run: |
+        run: |
           echo label: ${{ matrix.label }}
           echo api: ${{ matrix.api }}
           echo postgres: ${{ matrix.postgres }}
+
