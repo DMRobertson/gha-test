@@ -14,7 +14,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Runs a set of commands using the runners shell
       - name: Test GHA expressions language
         run: |
           echo null: ${{ null }}
@@ -38,6 +37,15 @@ jobs:
 
           echo "no array or object literals!"
           echo "can't subsitute and not provide an expression"
+
+      - name: Test logical and
+        run: |
+          echo 'null && 1': ${{ null && 1 }}
+          echo '0 && 1': ${{ 0 && 1 }}, ${{ toJSON( 0 && 1 ) }}
+          echo '1 && 1': ${{ 1 && 1 }}, ${{ toJSON( 1 && 1 ) }}
+          echo '2 && 1': ${{ 2 && 1 }}, ${{ toJSON( 2 && 1 ) }}
+          echo '\'\' && 1': ${{ '' && 1 }}, ${{ toJSON( '' && 1 ) }}
+          echo '\'potato\' && 1': ${{ 'potato' && 1 }}, ${{ toJSON( 'potato' && 1 ) }}
 
   test-reading-from-matrix:
     runs-on: ubuntu-latest
