@@ -73,5 +73,5 @@ jobs:
           echo
           echo 'postgres && 1': ${{ matrix.postgres && 1 }} ${{ toJSON(matrix.postgres && 1) }}
           echo 'api && 1': ${{ matrix.api && 1 }} ${{ toJSON(matrix.api && 1) }}
-          echo 'POSTGRES=${POSTGRES:+<NOT SET>}'
-          echo 'API=${API:+<NOT SET>}'
+          echo POSTGRES=${POSTGRES:+<NOT SET>}
+          echo API=${API:+<NOT SET>}
