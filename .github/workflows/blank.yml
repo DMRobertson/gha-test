@@ -44,8 +44,8 @@ jobs:
           echo '0 && 1': ${{ 0 && 1 }}, ${{ toJSON( 0 && 1 ) }}
           echo '1 && 1': ${{ 1 && 1 }}, ${{ toJSON( 1 && 1 ) }}
           echo '2 && 1': ${{ 2 && 1 }}, ${{ toJSON( 2 && 1 ) }}
-          echo '\'\' && 1': ${{ '' && 1 }}, ${{ toJSON( '' && 1 ) }}
-          echo '\'potato\' && 1': ${{ 'potato' && 1 }}, ${{ toJSON( 'potato' && 1 ) }}
+          echo "'' && 1": ${{ '' && 1 }}, ${{ toJSON( '' && 1 ) }}
+          echo "'potato' && 1": ${{ 'potato' && 1 }}, ${{ toJSON( 'potato' && 1 ) }}
 
   test-reading-from-matrix:
     runs-on: ubuntu-latest
