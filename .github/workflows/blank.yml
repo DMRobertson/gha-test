@@ -24,9 +24,11 @@ jobs:
 
           echo numbers
           echo 0: ${{ 0 }}
+          echo 0.1+0.2: ${{ 0.1+0.2 }}
           echo 1: ${{ 1 }}
           echo 10: ${{ 10 }}
           echo -0: ${{ -0 }}
+          echo -0.0: ${{ -0.0 }}
           echo -1: ${{ -1 }}
 
           echo strings
@@ -34,9 +36,8 @@ jobs:
           echo empty string: ${{ '' }}
           echo \'potato\': ${{ 'potato' }}
 
-          echo can't subsitute and not provide an expression
-          echo no array or object literals!
-
+          echo "no array or object literals!"
+          echo "can't subsitute and not provide an expression"
 
 
 
