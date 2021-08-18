@@ -1,3 +1,4 @@
+
 name: Dummy test
 
 on:
@@ -57,9 +58,13 @@ jobs:
 
     name: ${{ matrix.label }}
     steps:
-      - name: Echooooooo
+      - name: Echo
         run: |
           echo label: ${{ matrix.label }}
           echo api: ${{ matrix.api }}
           echo postgres: ${{ matrix.postgres }}
+
+          echo label: ${{ toJSON(matrix.label) }}
+          echo api: ${{ toJSON(matrix.api) }}
+          echo postgres: ${{ toJSON(matrix.postgres) }}
 
