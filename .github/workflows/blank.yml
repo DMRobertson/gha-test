@@ -31,12 +31,12 @@ jobs:
 
           echo strings
 
-          echo empty expression: ${{  }}
           echo empty string: ${{ '' }}
           echo \'potato\': ${{ 'potato' }}
 
+          # will fail, this requires an expression
+          # echo empty substitution: ${{  }}
           echo no array or object literals!
-
 
 
 
