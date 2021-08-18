@@ -47,9 +47,9 @@ jobs:
           echo '2 && 2': ${{ 2 && 2 }}, ${{ toJSON( 2 && 2 ) }}
           echo "'' && 1": ${{ '' && 1 }}, ${{ toJSON( '' && 1 ) }}
           echo "'potato' && 1": ${{ 'potato' && 1 }}, ${{ toJSON( 'potato' && 1 ) }}
-          echo "null && 'a' || 'b'": ${{ null && 'a' || 'b' }}, ${{ toJSON( null && 'a' || 'b' }}
-          echo "true && 'a' || 'b'": ${{ true && 'a' || 'b' }}, ${{ toJSON( true && 'a' || 'b' }}
-          echo "false && 'a' || 'b'": ${{ false && 'a' || 'b' }}, ${{ toJSON( false && 'a' || 'b' }}
+          echo "null && 'a' || 'b'": ${{ null && 'a' || 'b' }}, ${{ toJSON( (null && 'a') || 'b' }}
+          echo "true && 'a' || 'b'": ${{ true && 'a' || 'b' }}, ${{ toJSON( (true && 'a') || 'b' }}
+          echo "false && 'a' || 'b'": ${{ false && 'a' || 'b' }}, ${{ toJSON( (false && 'a') || 'b' }}
 
   test-reading-from-matrix:
     runs-on: ubuntu-latest
