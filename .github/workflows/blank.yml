@@ -29,3 +29,18 @@ jobs:
           echo -0: ${{ -0 }}
           echo -1: ${{ -1 }}
 
+          echo arrays
+          echo []: ${{ [] }}
+          echo [1]: ${{ [1] }}
+          echo [1, 2]: ${{ [1, 2] }}
+          echo [1, 2, "hello"]: ${{ [1, 2, "hello"] }}
+
+          echo objects
+          echo {}: ${{ {} }}
+          echo {"hello": "world"}: ${{ {"hello": "world"} }}
+          echo {"hello": "world", "potato": "tasty"}: ${{ {"hello": "world", "potato": "tasty"} }}
+          echo {"a": "A", "a": "A"}: ${{ {"a": "A", "a": "A"} }}
+
+
+
+
