@@ -59,6 +59,9 @@ jobs:
     name: ${{ matrix.label }}
     steps:
       - name: Echo
+        env:
+          POSTGRES: ${{ matrix.postgres }}
+          API: ${{ matrix.api }}
         run: |
           echo label: ${{ matrix.label }}
           echo api: ${{ matrix.api }}
@@ -70,3 +73,5 @@ jobs:
           echo
           echo 'postgres && 1': ${{ matrix.postgres && 1 }} ${{ toJSON(matrix.postgres && 1) }}
           echo 'api && 1': ${{ matrix.api && 1 }} ${{ toJSON(matrix.api && 1) }}
+          echo 'POSTGRES=${POSTGRES:+<NOT SET>}'
+          echo 'API=${API:+<NOT SET>}'
